@@ -1,0 +1,74 @@
+/* src/components/Header.module.css */
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Header y menú */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  .hamburger {
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none; /* Visible solo en dispositivos pequeños */
+    color: #ffffff;
+  }
+  
+  .navbar {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navLink {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .navLink:hover {
+    color: #ffdd57;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block; /* Mostrar icono hamburguesa en pantallas pequeñas */
+    }
+  
+    .navbar {
+      display: none; /* Ocultar el menú por defecto en pantallas pequeñas */
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: #2c3e50;
+      flex-direction: column;
+      gap: 15px;
+      padding: 20px;
+      border-radius: 0 0 8px 8px;
+      z-index: 100;
+    }
+  
+    .show {
+      display: flex; /* Mostrar el menú cuando está activo */
+    }
+  
+    .navLink {
+      color: #fff;
+      text-align: center;
+    }
+  }
+  

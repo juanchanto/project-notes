@@ -1,35 +1,38 @@
 // src/app/page.tsx
-import { createClient } from '@/utils/supabase/server';
-import styles from './Notes.module.css'; // Asegúrate de que la ruta sea correcta
-import { Note } from '@/lib/types';
+"use client";
 
-export default async function Notes() {
-  const supabase = await createClient();
-  const { data: notes }: { data: Note[] | null } = await supabase.from("notes").select();
+import Link from 'next/link';
+import styles from './HomePage.module.css';
+import Header from './components/Header';
 
-  /*if (error) {
-    console.error("Error fetching notes:", error);
-    return <p>No se pudieron cargar las notas.</p>;
-  }*/
-
+export default function HomePage() {
+ 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Notas</h1>
-      <div className={styles.notesContainer}>
-        {notes ? (
-          notes.map(note => ( // Usa 'note' aquí o define una interfaz para las notas
-            <div key={note.id} className={styles.noteCard}>
-              <h2 className={styles.noteTitle}>{note.title}</h2>
-              <p className={styles.noteContent}>{note.content}</p>
-              <small className={styles.noteDate}>
-                Creado el: {new Date(note.created_at ?? '').toLocaleDateString()}
-              </small>
-            </div>
-          ))
-        ) : (
-          <p className={styles.noNotesMessage}>No hay notas disponibles.</p>
-        )}
-      </div>
-    </div>
+    <main className={styles.container}>
+      <Header/>
+      <section className={styles.intro}>
+        <h1 className={styles.title}>Bienvenido a tu Bloc de Notas</h1>
+        <p className={styles.description}>
+          Crea, organiza y gestiona tus notas de manera rápida y sencilla.
+        </p>
+      </section>
+
+      <section className={styles.actions}>
+        <Link href="/new-note" className={`${styles.button} ${styles.createButton}`}>
+          Crear Nueva Nota
+        </Link>
+        <Link href="/notes" className={`${styles.button} ${styles.manageButton}`}>
+          Gestionar Notas
+        </Link>
+      </section>
+
+      <section className={styles.notesList}>
+        <h2 className={styles.subtitle}>Tus Notas Recientes</h2>
+        <div className={styles.noteCard}>
+          <h3>Título de la Nota</h3>
+          <p>Un breve resumen del contenido de la nota...</p>
+        </div>
+      </section>
+    </main>
   );
 }

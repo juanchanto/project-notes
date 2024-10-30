@@ -1,0 +1,89 @@
+/* src/app/HomePage.module.css */
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Estilos adicionales para la página */
+  
+  .intro {
+    margin-bottom: 20px;
+  }
+  
+  .title {
+    font-size: 2.5em;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    font-size: 1.2em;
+    color: #ffffff;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .createButton {
+    background-color: #28a745;
+  }
+  
+  .createButton:hover {
+    background-color: #218838;
+  }
+  
+  .manageButton {
+    background-color: #007bff;
+  }
+  
+  .manageButton:hover {
+    background-color: #0069d9;
+  }
+  
+  .notesList {
+    text-align: left;
+  }
+  
+  .subtitle {
+    font-size: 1.8em;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+  
+  .noteCard {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .noteCard h3 {
+    font-size: 1.3em;
+    margin: 0;
+    color: #343a40;
+  }
+  
+  .noteCard p {
+    color: #6c757d;
+    margin: 5px 0 0;
+  }
+  
