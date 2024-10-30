@@ -1,8 +1,34 @@
+// src/app/page.tsx
 import { createClient } from '@/utils/supabase/server';
+import styles from './Notes.module.css'; // Asegúrate de que la ruta sea correcta
 
 export default async function Notes() {
   const supabase = await createClient();
-  const { data: notes } = await supabase.from("notes").select();
+  const { data: notes, error } = await supabase.from("notes").select();
 
-  return <pre>{JSON.stringify(notes, null, 2)}</pre>
+  if (error) {
+    console.error("Error fetching notes:", error);
+    return <p>No se pudieron cargar las notas.</p>;
+  }
+
+  return (
+    <div className={styles.container}>
+      <h1 className={styles.title}>Notas</h1>
+      <div className={styles.notesContainer}>
+        {notes && notes.length > 0 ? (
+          notes.map((note: any) => ( // Usa 'any' aquí o define una interfaz para las notas
+            <div key={note.id} className={styles.noteCard}>
+              <h2 className={styles.noteTitle}>{note.title}</h2>
+              <p className={styles.noteContent}>{note.content}</p>
+              <small className={styles.noteDate}>
+                Creado el: {new Date(note.created_at ?? '').toLocaleDateString()}
+              </small>
+            </div>
+          ))
+        ) : (
+          <p className={styles.noNotesMessage}>No hay notas disponibles.</p>
+        )}
+      </div>
+    </div>
+  );
 }

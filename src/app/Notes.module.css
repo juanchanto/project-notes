@@ -1,0 +1,52 @@
+/* src/app/Notes.module.css */
+
+.container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.title {
+    font-size: 2rem;
+    color: #f9f9f9;
+    margin-bottom: 20px;
+}
+
+.notesContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.noteCard {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    text-align: left;
+}
+
+.noteTitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.noteContent {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.noteDate {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+.noNotesMessage {
+    font-size: 1rem;
+    color: #777;
+}
