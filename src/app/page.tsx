@@ -17,7 +17,7 @@ export default async function Notes() {
       <h1 className={styles.title}>Notas</h1>
       <div className={styles.notesContainer}>
         {notes ? (
-          notes.map(note => ( // Usa 'any' aquí o define una interfaz para las notas
+          notes.map(note => ( // Usa 'note' aquí o define una interfaz para las notas
             <div key={note.id} className={styles.noteCard}>
               <h2 className={styles.noteTitle}>{note.title}</h2>
               <p className={styles.noteContent}>{note.content}</p>
