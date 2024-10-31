@@ -1,5 +1,4 @@
 /* src/app/Notes.module.css */
-
 .container {
     font-family: Arial, sans-serif;
     padding: 20px;
@@ -8,10 +7,29 @@
     text-align: center;
 }
 
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
 .title {
     font-size: 2rem;
     color: #f9f9f9;
-    margin-bottom: 20px;
+}
+
+.backupButton {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.backupButton:hover {
+    background-color: #0056b3;
 }
 
 .notesContainer {
@@ -26,6 +44,13 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #f9f9f9;
     text-align: left;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.noteCard:hover {
+    background-color: #e0e0e0;
 }
 
 .noteTitle {
@@ -49,4 +74,21 @@
 .noNotesMessage {
     font-size: 1rem;
     color: #777;
+}
+/* src/app/Notes.module.css */
+
+.backupButton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #0070f3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.backupButton:hover {
+    background-color: #005bb5;
 }
