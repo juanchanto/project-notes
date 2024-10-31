@@ -4,8 +4,9 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import styles from './Header.module.css'; // Asegúrate de crear el archivo CSS correspondiente
+import { signout } from '@/app/login/actions';
 
-export default function Header() {
+export default function HeaderAuth() {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -20,8 +21,9 @@ export default function Header() {
             <nav className={`${styles.navbar} ${menuOpen ? styles.show : ''}`}>
                 <Link href="/" className={styles.navLink}>Inicio</Link>
                 <Link href="/new-note" className={styles.navLink}>Crear Nota</Link>
-                <Link href="/login" className={styles.navLink}>Gestionar Notas</Link>
-                <Link href="/profile" className={styles.navLink}>Descargar</Link>
+                <Link href="/notes" className={styles.navLink}>Gestionar Notas</Link>
+                <Link href="/profile" className={styles.navLink}>Perfil</Link>
+                <Link href="#" onClick={signout} className={styles.navLink}>Cerrar sesión</Link>
             </nav>
         </header>
     );

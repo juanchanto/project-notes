@@ -3,6 +3,7 @@ import { createClient } from '@/utils/supabase/server'
 import styles from '@/app/Notes.module.css'; // Asegúrate de que la ruta sea correcta
 import { Note } from '@/lib/types';
 import { signout } from '@/app/login/actions';
+import HeaderAuth from '../components/HeaderAuth';
 
 export default async function PrivateNotes() {
     const supabase = await createClient()
@@ -15,6 +16,7 @@ export default async function PrivateNotes() {
 
     return (
         <div className={styles.container}>
+            <HeaderAuth/>
             <p>Hello {data.user.email} </p>
             <button type="button" onClick={signout} className={styles.button}>Cerrar Sesión</button>
             <h1 className={styles.title}>Notas</h1>

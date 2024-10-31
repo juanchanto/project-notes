@@ -21,7 +21,7 @@ export default function HomePage() {
         <Link href="/new-note" className={`${styles.button} ${styles.createButton}`}>
           Crear Nueva Nota
         </Link>
-        <Link href="/notes" className={`${styles.button} ${styles.manageButton}`}>
+        <Link href="/login" className={`${styles.button} ${styles.manageButton}`}>
           Gestionar Notas
         </Link>
       </section>
